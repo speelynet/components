@@ -1,0 +1,34 @@
+{
+  "name": "@speelynet/components",
+  "version": "0.0.0",
+  "description": "Web components used on multiple pages of https://speely.net.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/speelynet/components.git"
+  },
+  "keywords": [
+    "web-components"
+  ],
+  "author": "Noah Friedman",
+  "license": "EPL-2.0",
+  "homepage": "https://github.com/speelynet/components#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/register": "^7.14.5",
+    "@cucumber/cucumber": "^7.3.0",
+    "@happy-dom/global-registrator": "^2.22.0",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/web-components": "^6.3.4",
+    "babel-loader": "^8.2.2",
+    "happy-dom": "^2.22.0",
+    "storybook-dark-mode": "^1.0.8"
+  }
+}

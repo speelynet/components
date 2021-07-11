@@ -1,2 +1,7 @@
-# components
-Web components used on multiple pages of https://speely.net.
+# [SpeelyNet](https://github.com/speelynet/)/components
+
+Web components used on multiple pages of [speely.net](https://speely.net).
+
+Unit tests use [Cucumber.js](https://github.com/cucumber/cucumber-js#readme) for writing and execution, [Happy DOM](https://github.com/capricorn86/happy-dom#readme) for DOM interaction and [Babel](https://babeljs.io/) for transpilation.
+
+Visual tests use [Storybook](https://storybook.js.org/).
