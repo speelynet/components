@@ -1,4 +1,4 @@
-# [SpeelyNet](https://github.com/speelynet/)/components
+# [SpeelyNet](https://github.com/speelynet/)/components [![npm](https://img.shields.io/npm/v/@speelynet/components)](https://www.npmjs.com/package/@speelynet/components) [![CI/CD](https://github.com/speelynet/components/actions/workflows/CICD.yml/badge.svg)](https://github.com/speelynet/components/actions/workflows/CICD.yml)
 
 Web components used on multiple pages of [speely.net](https://speely.net).
 
