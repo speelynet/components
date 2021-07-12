@@ -1,6 +1,7 @@
 const template = document.createElement("template");
 template.innerHTML = `
-`;
+<p>Hello, World!</p>
+`.trim();
 
 class Header extends HTMLElement {
   constructor() {

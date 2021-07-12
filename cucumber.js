@@ -1,6 +1,8 @@
 module.exports = {
   default: [
     "--require features/utils/*",
-    "--require features/step_definitions/*"
+    "--require index.js",
+    "--require features/step_definitions/*",
+    "--exit"
   ].join(" ")
 };

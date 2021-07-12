@@ -5,7 +5,7 @@
   "description": "Web components used on multiple pages of https://speely.net.",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js",
+    "test": "cucumber-js --tags 'not @wip' --publish-quiet",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
