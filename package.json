@@ -31,5 +31,8 @@
     "babel-loader": "^8.2.2",
     "happy-dom": "^2.22.0",
     "storybook-dark-mode": "^1.0.8"
+  },
+  "dependencies": {
+    "parcel": "^2.0.0-beta.3.1"
   }
 }
