@@ -1,4 +1,4 @@
-# [SpeelyNet](https://github.com/speelynet/)/components [![npm](https://img.shields.io/npm/v/@speelynet/components)](https://www.npmjs.com/package/@speelynet/components) [![CI/CD](https://github.com/speelynet/components/actions/workflows/CICD.yml/badge.svg)](https://github.com/speelynet/components/actions/workflows/CICD.yml)
+# [SpeelyNet](https://github.com/speelynet/)/components [![npm](https://img.shields.io/npm/v/@speelynet/components)](https://www.npmjs.com/package/@speelynet/components) [![CI/CD](https://github.com/speelynet/components/actions/workflows/CICD.yml/badge.svg)](https://github.com/speelynet/components/actions/workflows/CICD.yml) [![Storybook](https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg)](https://main--60ec4425952db600398468ef.chromatic.com)
 
 Web components used on multiple pages of [speely.net](https://speely.net).
 
