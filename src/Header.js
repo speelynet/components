@@ -24,7 +24,7 @@ template.innerHTML = `
   }
  
 </style>
-<div style="display: flex; align-items: center; justify-content: space-between; padding: 0.67em; border-bottom: 1px solid;">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
   <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
   <span id="subheading"></span>
 </div>
