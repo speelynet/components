@@ -17,6 +17,10 @@ When("I append a(n) <{word}> element connected to slot {string} with the content
   this.component.appendChild(e);
 });
 
+Then("I should see a(n) <{word}> element", function(word) {
+  assert.notStrictEqual(this.shadowRoot.querySelector(word), null, `found no <${word}> elements`);
+});
+
 Then("I should see a(n) <{word}> element reading {string}", function(word, string) {
   for (const e of this.shadowRoot.querySelectorAll(word)) {
     if (e.textContent === string) {
