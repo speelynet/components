@@ -24,13 +24,13 @@
     "@babel/preset-env": "^7.14.7",
     "@babel/register": "^7.14.5",
     "@cucumber/cucumber": "^7.3.0",
-    "@happy-dom/global-registrator": "^2.22.0",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/html": "^6.3.4",
     "@storybook/theming": "^6.3.4",
     "babel-loader": "^8.2.2",
-    "happy-dom": "^2.22.0",
+    "jsdom": "^16.6.0",
+    "jsdom-global": "^3.0.2",
     "storybook-dark-mode": "^1.0.8"
   },
   "dependencies": {
