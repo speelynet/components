@@ -18,11 +18,30 @@ When("I append a(n) <{word}> element connected to slot {string} with the content
 });
 
 Then("I should see a(n) <{word}> element", function(word) {
-  assert.notStrictEqual(this.shadowRoot.querySelector(word), null, `found no <${word}> elements`);
+  if (this.shadowRoot.querySelector(`${word}:not(slot ${word})`) === null) {
+    for (const s of this.shadowRoot.querySelectorAll("slot")) {
+      const assigned = s.assignedNodes();
+      if (assigned.length === 0 && s.querySelector(word) !== null) {
+        return;
+      }
+      for (const e of s.assignedNodes()) {
+        if (e.nodeName === word.toUpperCase()) {
+          return;
+        }
+      }
+    }
+  } else {
+    return;
+  }
+
+  assert.fail(`found no <${word}> elements`);
 });
 
 Then("I should see a(n) <{word}> element reading {string}", function(word, string) {
-  for (const e of this.shadowRoot.querySelectorAll(word)) {
+  const elements = [...this.shadowRoot.querySelectorAll(`${word}:not(slot ${word})`)];
+  this.shadowRoot.querySelectorAll("slot").forEach(s => elements.push(...s.assignedNodes().filter(v => v.nodeName === word.toUpperCase())));
+
+  for (const e of elements) {
     if (e.textContent === string) {
       return;
     }
