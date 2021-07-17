@@ -26,7 +26,7 @@ template.innerHTML = `
 </style>
 <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
   <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
-  <span id="subheading"></span>
+  <slot name="sub"><span id="subheading"></span></slot>
 </div>
 `.trim();
 
@@ -43,11 +43,14 @@ class Header extends HTMLElement {
     this.attachShadow({mode: "open"})
       .appendChild(template.content.cloneNode(true));
 
-    this.shadowRoot.getElementById("subheading").innerText = this.subheadings[Math.floor(Math.random() * this.subheadings.length)] + "!";
+    const sub = this.shadowRoot.getElementById("subheading");
+    if (sub) {
+      sub.innerText = this.subheadings[Math.floor(Math.random() * this.subheadings.length)] + "!";
+    }
   }
 }
 
-customElements.define("custom-header", Header);
+window.customElements.define("custom-header", Header);
 
 // Import external CSS
 const e = document.createElement("link");
