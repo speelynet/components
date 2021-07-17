@@ -2,6 +2,6 @@
 
 Web components used on multiple pages of [speely.net](https://speely.net).
 
-Unit tests use [Cucumber.js](https://github.com/cucumber/cucumber-js#readme) for writing and execution, [Happy DOM](https://github.com/capricorn86/happy-dom#readme) for DOM interaction and [Babel](https://babeljs.io/) for transpilation.
+Unit tests use [Cucumber.js](https://github.com/cucumber/cucumber-js#readme) for writing and execution, [JSDOM](https://github.com/jsdom/jsdom#readme) for DOM interaction and [Babel](https://babeljs.io/) for transpilation.
 
 Visual tests use [Storybook](https://storybook.js.org/) and are published on [Chromatic](https://www.chromatic.com/).
