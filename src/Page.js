@@ -1,5 +1,9 @@
 const template = document.createElement("template");
 template.innerHTML = `
+<custom-header>
+    <slot name="sub" slot="sub"></slot>
+</custom-header>
+<slot name="content"></slot>
 `.trim();
 
 class Page extends HTMLElement {
@@ -10,4 +14,4 @@ class Page extends HTMLElement {
   }
 }
 
-customElements.define("custom-page", Page);
+window.customElements.define("custom-page", Page);

@@ -25,7 +25,7 @@ Then("I should see a(n) <{word}> element", function(word) {
         return;
       }
       for (const e of s.assignedNodes()) {
-        if (e.nodeName === word.toUpperCase()) {
+        if (e.nodeName === word.toUpperCase() || e.querySelector(word) !== null) {
           return;
         }
       }
@@ -38,14 +38,22 @@ Then("I should see a(n) <{word}> element", function(word) {
 });
 
 Then("I should see a(n) <{word}> element reading {string}", function(word, string) {
-  const elements = [...this.shadowRoot.querySelectorAll(`${word}:not(slot ${word})`)];
-  this.shadowRoot.querySelectorAll("slot").forEach(s => elements.push(...s.assignedNodes().filter(v => v.nodeName === word.toUpperCase())));
+  if ([...this.shadowRoot.querySelectorAll(`${word}:not(slot ${word})`)].find(e => e.textContent === string) !== undefined) {
+    return;
+  }
+  for (const s of this.shadowRoot.querySelectorAll("slot")) {
+    for (const e of s.assignedNodes().length === 0 ? [s] : s.assignedNodes()) {
+      const elements = [...e.querySelectorAll(word)];
+      if (e.tagName === word.toUpperCase()) {
+        elements.unshift(e);
+      }
 
-  for (const e of elements) {
-    if (e.textContent === string) {
-      return;
+      if (elements.find(e => e.textContent === string) !== undefined) {
+        return;
+      }
     }
   }
+
 
   assert.fail(`found no <${word}> elements reading "${string}"`);
 });
