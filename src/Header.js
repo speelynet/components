@@ -5,10 +5,6 @@ template.innerHTML = `
     font-family: "cooper-black-std", sans-serif;
   }
   
-  span#subheading {
-    font-style: italic;
-  }
-  
   @media (prefers-color-scheme: dark) {
     * {
       color: white;
@@ -26,26 +22,24 @@ template.innerHTML = `
 </style>
 <div style="display: flex; align-items: center; justify-content: space-between; padding: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
   <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
-  <slot name="sub"><span id="subheading"></span></slot>
+  <span style="font-style: italic;"><slot name="sub"></slot></span>
 </div>
 `.trim();
 
 class Header extends HTMLElement {
-  subheadings = [
-    "Crust included",
-    "The speeliest of nets",
-    `Now ${Math.floor(Math.random() * 899 + 101)}% more speely`,
-    "It's dot com"
-  ];
 
   constructor() {
     super();
     this.attachShadow({mode: "open"})
       .appendChild(template.content.cloneNode(true));
 
-    const sub = this.shadowRoot.getElementById("subheading");
-    if (sub) {
-      sub.innerText = this.subheadings[Math.floor(Math.random() * this.subheadings.length)] + "!";
+    const root = this.getRootNode();
+    if (root.host === undefined || root.host.tagName !== "CUSTOM-PAGE") {
+      import("./subheadings.js")
+        .then(subheadings => subheadings.default)
+        .then(subheading => {
+          this.shadowRoot.querySelector("slot").innerHTML = subheading();
+        });
     }
   }
 }

@@ -3,7 +3,8 @@ import "../src/Page";
 export default {
   title: "Page",
   args: {
-    content: "<p>Example Content</p>"
+    content: "<p>Example Content</p>",
+    subheading: "Placeholder Subheading"
   },
   decorators: [
     Story => `
@@ -17,10 +18,9 @@ export default {
   ]
 }
 
-export const Default = ({content}) => `
+export const Default = ({content, subheading}) => `
 <custom-page>
-  <div slot="content">
+    ${subheading ? `<span slot="sub">${subheading}</span>`: ""}
     ${content}
-  </div>
 </custom-page>
 `;
