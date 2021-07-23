@@ -24,3 +24,8 @@ export const Default = ({content, subheading}) => `
     ${content}
 </custom-page>
 `;
+
+export const LongContent = Default.bind({});
+LongContent.args = {
+  content: "<br>".repeat(40)
+};
