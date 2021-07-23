@@ -6,9 +6,6 @@ template.innerHTML = `
   }
   
   @media (prefers-color-scheme: dark) {
-    * {
-      color: white;
-    }
     h1 span {
       text-shadow: 0 0 3px black, 0 0 7px white;
     }
@@ -20,7 +17,7 @@ template.innerHTML = `
   }
  
 </style>
-<div style="display: flex; align-items: center; justify-content: space-between; padding: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
+<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
   <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
   <span style="font-style: italic;"><slot name="sub"></slot></span>
 </div>

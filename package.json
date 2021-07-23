@@ -4,6 +4,9 @@
   "private": false,
   "description": "Web components used on multiple pages of https://speely.net.",
   "main": "index.js",
+  "files": [
+    "src/**"
+  ],
   "scripts": {
     "test": "cucumber-js --tags 'not @wip' --publish-quiet",
     "storybook": "start-storybook -p 6006",
