@@ -1,6 +1,6 @@
 {
   "name": "@speelynet/components",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": false,
   "description": "Web components used on multiple pages of https://speely.net.",
   "main": "index.js",
