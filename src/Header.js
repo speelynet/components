@@ -1,8 +1,8 @@
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
-  * {
-    font-family: "cooper-black-std", sans-serif;
+  *, ::slotted(*) {
+    font-family: "cooper-black-std", sans-serif !important;
   }
   
   @media (prefers-color-scheme: dark) {
