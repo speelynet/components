@@ -36,6 +36,10 @@ s.innerHTML = `
     font-family: Arial, sans-serif;
 }
 
+body {
+    margin: 0;
+}
+
 @media(prefers-color-scheme: dark) {
     body {
         background: #333;
