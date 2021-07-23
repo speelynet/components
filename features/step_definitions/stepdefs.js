@@ -9,6 +9,12 @@ Given("I render a(n) <{word}> component", function(word) {
   document.body.appendChild(this.component);
 });
 
+When("I append a(n) <{word}> element with the content {string}", function(word, string) {
+  const e = document.createElement(word);
+  e.innerHTML = string;
+  this.component.appendChild(e);
+});
+
 When("I append a(n) <{word}> element connected to slot {string} with the content {string}", function(element, slot, content) {
   const e = document.createElement(element);
   e.setAttribute("slot", slot);
@@ -18,14 +24,10 @@ When("I append a(n) <{word}> element connected to slot {string} with the content
 });
 
 Then("I should see a(n) <{word}> element", function(word) {
-  if (this.shadowRoot.querySelector(`${word}:not(slot ${word})`) === null) {
+  if ([...this.shadowRoot.querySelectorAll(word)].filter(e => !e.matches("slot *")).length === 0) {
     for (const s of this.shadowRoot.querySelectorAll("slot")) {
-      const assigned = s.assignedNodes();
-      if (assigned.length === 0 && s.querySelector(word) !== null) {
-        return;
-      }
-      for (const e of s.assignedNodes()) {
-        if (e.nodeName === word.toUpperCase() || e.querySelector(word) !== null) {
+      for (const e of s.assignedNodes({flatten: true})) {
+        if ([e, ...e.querySelectorAll(word)].filter(e => e.matches(word)).length !== 0) {
           return;
         }
       }
@@ -34,26 +36,25 @@ Then("I should see a(n) <{word}> element", function(word) {
     return;
   }
 
+
   assert.fail(`found no <${word}> elements`);
 });
 
-Then("I should see a(n) <{word}> element reading {string}", function(word, string) {
-  if ([...this.shadowRoot.querySelectorAll(`${word}:not(slot ${word})`)].find(e => e.textContent === string) !== undefined) {
-    return;
+Then("I should see a(n) <{word}> element containing {string}", function(word, string) {
+  for (const e of [...this.shadowRoot.querySelectorAll(word)].filter(e => !e.matches("slot *"))) {
+    if (e.innerHTML === string) {
+      return;
+    }
   }
-  for (const s of this.shadowRoot.querySelectorAll("slot")) {
-    for (const e of s.assignedNodes().length === 0 ? [s] : s.assignedNodes()) {
-      const elements = [...e.querySelectorAll(word)];
-      if (e.tagName === word.toUpperCase()) {
-        elements.unshift(e);
-      }
-
-      if (elements.find(e => e.textContent === string) !== undefined) {
-        return;
+  for (const s of [...this.shadowRoot.querySelectorAll("slot")]) {
+    for (const e of s.assignedNodes({flatten: true}).filter(e => e.tagName !== undefined)) {
+      for (const t of [e, ...e.querySelectorAll(word)].filter(e => e.matches(word))) {
+        if (t.innerHTML === string) {
+          return;
+        }
       }
     }
   }
-
 
   assert.fail(`found no <${word}> elements reading "${string}"`);
 });
