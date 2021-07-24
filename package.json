@@ -1,27 +1,13 @@
 {
-  "name": "@speelynet/components",
   "version": "0.1.1",
-  "private": false,
   "description": "Web components used on multiple pages of https://speely.net.",
-  "main": "index.js",
-  "files": [
-    "src/**"
-  ],
   "scripts": {
     "test": "cucumber-js --tags 'not @wip' --publish-quiet",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/speelynet/components.git"
-  },
-  "keywords": [
-    "web-components"
-  ],
   "author": "Noah Friedman",
   "license": "EPL-2.0",
-  "homepage": "https://github.com/speelynet/components#readme",
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
