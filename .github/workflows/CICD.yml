@@ -67,5 +67,5 @@ jobs:
           ssh-add - <<< "${{ secrets.CICDSSH }}"
           mkdir ~/.ssh
           ssh-keyscan speely.net >> ~/.ssh/known_hosts
-          scp -r ./index.js ./src github@speely.net:~/components/$([[ $GITHUB_REF == refs/tags/* ]] && echo "stable" || echo "latest")
+          scp -r ./src/* github@speely.net:~/components/$([[ $GITHUB_REF == refs/tags/* ]] && echo "stable" || echo "latest")
 
