@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.1.2](https://github.com/speelynet/components/tree/v0.1.2)
+- Change file structure
+
 ### [v0.1.1](https://github.com/speelynet/components/tree/v0.1.1)
 - Add [styles](https://github.com/speelynet/components/tree/v0.1.1/src/Page.js#L39) to Page component
 
