@@ -1,5 +1,9 @@
-import {Given, When, Then} from "@cucumber/cucumber";
+import {Given, When, Then, Before} from "@cucumber/cucumber";
 import assert from "assert";
+
+Before(function() {
+  this.events = {};
+});
 
 Given("I render a(n) <{word}> component", function(word) {
   document.body.innerHTML = "";
@@ -7,6 +11,12 @@ Given("I render a(n) <{word}> component", function(word) {
   this.component = document.createElement(word);
   this.shadowRoot = this.component.shadowRoot;
   document.body.appendChild(this.component);
+});
+
+Given("I register an event watcher for the {string} event", function(string) {
+  document.body.addEventListener(string, e => {
+    this.events[string] = e;
+  });
 });
 
 When("I append a(n) <{word}> element with the content {string}", function(word, string) {
@@ -21,6 +31,12 @@ When("I append a(n) <{word}> element connected to slot {string} with the content
   e.innerHTML = content;
 
   this.component.appendChild(e);
+});
+
+When("I click the <{word}> child element", function(word) {
+  const e = this.shadowRoot.querySelector(word);
+  assert.notStrictEqual(e, null, `found no <${word}> elements`);
+  e.click();
 });
 
 Then("I should see a(n) <{word}> element", function(word) {
@@ -57,4 +73,12 @@ Then("I should see a(n) <{word}> element containing {string}", function(word, st
   }
 
   assert.fail(`found no <${word}> elements reading "${string}"`);
+});
+
+Then("the {string} event should have been fired", function(string) {
+  assert.notStrictEqual(this.events[string], undefined, `the "${string}" event was not fired`);
+});
+
+Then("the {string} event data should contain the details", function(string, details) {
+  assert.deepStrictEqual(this.events[string].detail, JSON.parse(details));
 });
