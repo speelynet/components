@@ -65,7 +65,7 @@ class ToggleSwitch extends HTMLElement {
       .appendChild(template.content.cloneNode(true));
 
     this.shadowRoot.querySelector("input").onclick = e => {
-      this.dispatchEvent(new CustomEvent("toggled", {bubbles: true, composed: true}));
+      this.dispatchEvent(new CustomEvent("toggled", {detail: {checked: e.target.checked}, bubbles: true, composed: true}));
     };
   }
 }
