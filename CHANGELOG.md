@@ -1,5 +1,10 @@
 # CHANGELOG
 
+### [v0.2.0](https://github.com/speelynet/components/tree/v0.2.0)
+- Add [ToggleSwitch](https://github.com/speelynet/components/tree/v0.2.0/src/ToggleSwitch.js) component
+- Implement [dark mode](https://github.com/speelynet/components/tree/v0.2.0/src/dark_mode.js) using CSS custom properties
+- Add [dark mode toggle switch](https://github.com/speelynet/components/tree/v0.2.0/src/Page.js#L31) to footer of [Page](https://github.com/speelynet/components/tree/v0.2.0/src/Page.js) component
+
 ### [v0.1.2](https://github.com/speelynet/components/tree/v0.1.2)
 - Change file structure
 
