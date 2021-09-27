@@ -14,7 +14,6 @@ template.innerHTML = `
   <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
   <div style="display: flex; align-items: center;">
     <span style="font-style: italic; margin-right: 5px;"><slot name="sub"></slot></span>
-    <toggle-switch></toggle-switch>
   </div>
 </div>
 `.trim();
@@ -35,16 +34,6 @@ class Header extends HTMLElement {
           this.shadowRoot.querySelector("slot").innerHTML = subheading();
         });
     }
-
-    // Set up dark mode toggle switch and event handler
-    const darkToggle = this.shadowRoot.querySelector("toggle-switch");
-    const docStyle = document.documentElement.style;
-    if (docStyle.getPropertyValue("--dark-mode") !== "initial") {
-      darkToggle.shadowRoot.querySelector("input").checked = true;
-    }
-    darkToggle.addEventListener("toggled", ({detail}) => {
-      docStyle.setProperty("--dark-mode", detail.checked ? " " : "initial");
-    });
   }
 }
 

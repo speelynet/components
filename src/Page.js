@@ -13,6 +13,9 @@ template.innerHTML = `
     :visited {
         color: var(--dark-visited, #551A8B); 
     }
+    footer > * {
+        margin-bottom: 0.5em;
+    }
 </style>
 <div style="padding: 0.67em; display: flex; flex-direction: column; justify-content: space-between; min-height: calc(100vh - 1.34em);">
     <div>
@@ -21,7 +24,13 @@ template.innerHTML = `
         </custom-header>
         <slot></slot>
     </div>
-    <footer style="padding-top: 0.5em; border-top: 1px solid; position: relative; bottom: 0; width: calc(100vw - 1.34em);">&copy; 2021 Noah Friedman | <a href="/LICENSE">Eclipse Public License version 2.0</a></footer>
+    <footer style="padding-top: 0.5em; border-top: 1px solid; position: relative; bottom: 0; display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <span>&copy; 2021 Noah Friedman | <a href="/LICENSE">Eclipse Public License version 2.0</a></span>
+        <div style="display: flex; align-items: center;">
+            <span style="margin-right: 0.5em;">Dark Mode</span>
+            <toggle-switch></toggle-switch>
+        </div>
+    </footer>
 </div>
 `.trim();
 
@@ -37,6 +46,16 @@ class Page extends HTMLElement {
       .then(subheading => {
         this.shadowRoot.querySelector("custom-header slot").innerHTML = subheading();
       });
+
+    // Set up dark mode toggle switch and event handler
+    const darkToggle = this.shadowRoot.querySelector("toggle-switch");
+    const docStyle = document.documentElement.style;
+    if (docStyle.getPropertyValue("--dark-mode") !== "initial") {
+      darkToggle.shadowRoot.querySelector("input").checked = true;
+    }
+    darkToggle.addEventListener("toggled", ({detail}) => {
+      docStyle.setProperty("--dark-mode", detail.checked ? " " : "initial");
+    });
   }
 }
 
