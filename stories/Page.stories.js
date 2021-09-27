@@ -1,5 +1,3 @@
-import "../src/Page";
-
 export default {
   title: "Page",
   args: {

@@ -1,5 +1,6 @@
 import {themes} from "@storybook/theming";
 import {prefersDark} from "storybook-dark-mode/dist/Tool";
+import "../src/index.js";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

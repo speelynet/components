@@ -1,5 +1,3 @@
-import "../src/Header";
-
 export default {
   title: "Header",
   args: {

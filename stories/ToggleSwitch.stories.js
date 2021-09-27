@@ -1,5 +1,3 @@
-import "../src/ToggleSwitch";
-
 export default {
   title: "Toggle Switch",
   parameters: {

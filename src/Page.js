@@ -2,6 +2,18 @@
 
 const template = document.createElement("template");
 template.innerHTML = `
+<style>
+    :any-link {
+        --dark-link: var(--dark-mode) #2196F3;
+        --dark-visited: var(--dark-mode) #B388FF;
+    }
+    :link {
+        color: var(--dark-link, #0000EE);
+    }
+    :visited {
+        color: var(--dark-visited, #551A8B); 
+    }
+</style>
 <div style="padding: 0.67em; display: flex; flex-direction: column; justify-content: space-between; min-height: calc(100vh - 1.34em);">
     <div>
         <custom-header>
@@ -19,6 +31,7 @@ class Page extends HTMLElement {
     this.attachShadow({mode: "open"})
       .appendChild(template.content.cloneNode(true));
 
+    // Generate a subheading for Header
     import("./subheadings.js")
       .then(subheadings => subheadings.default)
       .then(subheading => {
@@ -34,19 +47,14 @@ const s = document.createElement("style");
 s.innerHTML = `
 * {
     font-family: Arial, sans-serif;
+    --dark: var(--dark-mode) white;
+    color: var(--dark, initial);
 }
 
 body {
     margin: 0;
-}
-
-@media(prefers-color-scheme: dark) {
-    body {
-        background: #333;
-    }
-    * {
-        color: white;
-    }
+    --dark: var(--dark-mode) #333;
+    background: var(--dark, white);
 }
 `.trim();
 document.head.appendChild(s);
