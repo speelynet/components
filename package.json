@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Web components used on multiple pages of https://speely.net.",
   "scripts": {
     "test": "cucumber-js --tags 'not @wip' --publish-quiet",
