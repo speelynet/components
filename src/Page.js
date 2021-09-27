@@ -55,6 +55,7 @@ class Page extends HTMLElement {
     }
     darkToggle.addEventListener("toggled", ({detail}) => {
       docStyle.setProperty("--dark-mode", detail.checked ? " " : "initial");
+      document.cookie = `dark-mode=${detail.checked};`;
     });
   }
 }
