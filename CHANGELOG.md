@@ -1,8 +1,11 @@
 # CHANGELOG
 
+### [v0.2.2](https://github.com/speelynet/components/tree/v0.2.2)
+- Fix issues with cookies 
+
 ### [v0.2.1](https://github.com/speelynet/components/tree/v0.2.1)
-- Fix import order in [index.js](https://github.com/speelynet/components/tree/v0.2.0/src/index.js)
-- [Ensure cookie gets changed](https://github.com/speelynet/components/tree/v0.2.0/src/Page.js#L58) on dark mode toggle 
+- Fix import order in [index.js](https://github.com/speelynet/components/tree/v0.2.1/src/index.js)
+- [Ensure cookie gets changed](https://github.com/speelynet/components/tree/v0.2.1/src/Page.js#L58) on dark mode toggle 
 
 ### [v0.2.0](https://github.com/speelynet/components/tree/v0.2.0)
 - Add [ToggleSwitch](https://github.com/speelynet/components/tree/v0.2.0/src/ToggleSwitch.js) component
