@@ -18,7 +18,7 @@
     "@storybook/html": "^6.3.8",
     "@storybook/theming": "^6.3.8",
     "babel-loader": "^8.2.2",
-    "jsdom": "^16.6.0",
+    "jsdom": "^17.0.0",
     "jsdom-global": "^3.0.2",
     "storybook-dark-mode": "^1.0.8"
   }
