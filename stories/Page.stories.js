@@ -2,7 +2,7 @@ export default {
   title: "Page",
   args: {
     content: "<p>Example Content</p>",
-    subheading: "Placeholder Subheading"
+    subheading: "",
   },
   decorators: [
     Story => `
@@ -22,6 +22,11 @@ export const Default = ({content, subheading}) => `
     ${content}
 </custom-page>
 `;
+
+export const Subheading = Default.bind({});
+Subheading.args = {
+  subheading: "Example Subheading"
+};
 
 export const LongContent = Default.bind({});
 LongContent.args = {

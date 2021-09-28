@@ -1,5 +1,3 @@
-
-
 const template = document.createElement("template");
 template.innerHTML = `
 <style>
@@ -39,13 +37,6 @@ class Page extends HTMLElement {
     super();
     this.attachShadow({mode: "open"})
       .appendChild(template.content.cloneNode(true));
-
-    // Generate a subheading for Header
-    import("./subheadings.js")
-      .then(subheadings => subheadings.default)
-      .then(subheading => {
-        this.shadowRoot.querySelector("custom-header slot").innerHTML = subheading();
-      });
 
     // Set up dark mode toggle switch and event handler
     const darkToggle = this.shadowRoot.querySelector("toggle-switch");
