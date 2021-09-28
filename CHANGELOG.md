@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.3.0](https://github.com/speelynet/components/tree/v0.3.0)
+- Remove dynamic subheading 
+
 ### [v0.2.2](https://github.com/speelynet/components/tree/v0.2.2)
 - Fix issues with cookies 
 
