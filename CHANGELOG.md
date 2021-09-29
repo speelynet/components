@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.3.1](https://github.com/speelynet/components/tree/v0.3.1)
+- Fix [flex properties in Header component](https://github.com/speelynet/components/tree/v0.3.0/src/Header.js#L14)
+
 ### [v0.3.0](https://github.com/speelynet/components/tree/v0.3.0)
 - Remove dynamic subheading 
 
