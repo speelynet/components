@@ -11,8 +11,8 @@ template.innerHTML = `
   }
 </style>
 <div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 0.67em; margin-bottom: 0.67em; border-bottom: 1px solid;">
-  <h1 style="margin: 0;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
-  <div style="display: flex; align-items: center;">
+  <h1 style="margin: 0; flex-shrink: 1;"><i>Welcome to</i> <span>SpeelyNet</span></h1>
+  <div style="display: flex; align-items: center; flex-shrink: 2;">
     <span style="font-style: italic; margin-right: 5px;"><slot name="sub"></slot></span>
   </div>
 </div>
