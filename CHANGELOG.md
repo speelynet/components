@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.3.2](https://github.com/speelynet/components/tree/v0.3.2)
+- Fix link styling in [Page](https://github.com/speelynet/components/tree/v0.3.2/src/Page.js) component
+
 ### [v0.3.1](https://github.com/speelynet/components/tree/v0.3.1)
 - Fix [flex properties in Header component](https://github.com/speelynet/components/tree/v0.3.0/src/Header.js#L14)
 
