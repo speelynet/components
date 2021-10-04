@@ -1,16 +1,21 @@
 const template = document.createElement("template");
+
+const linkStyle = `
+:any-link {
+    --dark-link: var(--dark-mode) #2196F3;
+    --dark-visited: var(--dark-mode) #B388FF;
+}
+:link {
+    color: var(--dark-link, #0000EE);
+}
+:visited {
+    color: var(--dark-visited, #551A8B); 
+}
+`.trim();
+
 template.innerHTML = `
 <style>
-    :any-link {
-        --dark-link: var(--dark-mode) #2196F3;
-        --dark-visited: var(--dark-mode) #B388FF;
-    }
-    :link {
-        color: var(--dark-link, #0000EE);
-    }
-    :visited {
-        color: var(--dark-visited, #551A8B); 
-    }
+    ${linkStyle}
     footer > * {
         margin-bottom: 0.5em;
     }
@@ -67,5 +72,7 @@ body {
     --dark: var(--dark-mode) #333;
     background: var(--dark, white);
 }
+
+${linkStyle}
 `.trim();
 document.head.appendChild(s);
