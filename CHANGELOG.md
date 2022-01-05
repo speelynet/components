@@ -1,5 +1,8 @@
 # CHANGELOG
 
+### [v0.3.3](https://github.com/speelynet/components/tree/v0.3.3)
+- Update [license](https://github.com/speelynet/components/tree/v0.3.2/LICENSE) and [license footer](https://github.com/speelynet/components/tree/v0.3.3/src/Page.js#L31)
+
 ### [v0.3.2](https://github.com/speelynet/components/tree/v0.3.2)
 - Fix link styling in [Page](https://github.com/speelynet/components/tree/v0.3.2/src/Page.js) component
 
