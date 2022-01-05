@@ -28,7 +28,7 @@ template.innerHTML = `
         <slot></slot>
     </div>
     <footer style="padding-top: 0.5em; border-top: 1px solid; position: relative; bottom: 0; display: flex; justify-content: space-between; flex-wrap: wrap;">
-        <span>&copy; 2021 Noah Friedman | <a href="/LICENSE">Eclipse Public License version 2.0</a></span>
+        <span>&copy; 2022 Noah Friedman | <a href="/LICENSE">Affero GNU Public License version 3.0</a></span>
         <div style="display: flex; align-items: center;">
             <span style="margin-right: 0.5em;">Dark Mode</span>
             <toggle-switch></toggle-switch>
